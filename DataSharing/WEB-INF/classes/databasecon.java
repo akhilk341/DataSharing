@@ -1,0 +1,34 @@
+package databaseconnection;
+import java.sql.*;
+
+public class databasecon
+{
+	static Connection con,con1;
+	
+public static Connection getconnection()
+	{
+ 		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");	
+con1 = DriverManager.getConnection("jdbc:mysql://sedascdatabase.cvdxo4wfuwri.us-east-2.rds.amazonaws.com:3306/sedasc","sedasc","sedasc#123");
+if(con1!=null){
+	System.out.println("connected");
+}
+		}
+		catch(Exception e)
+		{
+			//System.out.println("class error"+e);
+			//e.printStackTrace();
+		}
+		return con1;
+	}
+
+
+public static void main(String aa[]){
+	
+	databasecon.getconnection();
+}
+
+
+
+}
